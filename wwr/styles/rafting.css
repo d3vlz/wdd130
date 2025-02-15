@@ -163,3 +163,9 @@ footer a img {
   width: 30px;
   margin-left: 0.5rem;
 }
+
+.map-section {
+  border: 0;
+  width: 600px;
+  height: 450px;
+}
