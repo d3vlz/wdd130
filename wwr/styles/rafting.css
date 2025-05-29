@@ -1,0 +1,248 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-primary: #007FFF;
+  --color-white: #FFFFFF;
+  --color-darkblue: #011f5b;
+  --color-black: #000000;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  margin: 0 auto;
+  overflow-x: hidden; /* Asegura que el body no restrinja el contenido */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  padding: 0.5rem;
+}
+header img {
+  height: 100px;
+}
+nav a {
+  color: var(--color-white);
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background: url('../images/hero.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.hero h1 {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  font-family: 'Merriweather', serif;
+  font-size: 2rem;
+  color: var(--color-white);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
+}
+
+.hero article {
+  position: absolute;
+  top: 40%;
+  left: 5%;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.hero article img {
+  float: right;
+  width: 200px;
+  margin-left: 1rem;
+}
+
+section {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+section h2 {
+  font-family: 'Merriweather', serif;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+section p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.history-section {
+  padding: 2rem 1rem;
+}
+
+.history-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.history-content p {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-align: justify;
+}
+
+.history-img {
+  width: 250px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.rafting-images {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 1rem 0;
+  gap: 1rem;
+}
+
+.rafting-images figure {
+  flex: 1;
+  text-align: center;
+}
+
+.rafting-images img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.rafting-images figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 1rem;
+}
+
+footer p {
+  margin-bottom: 1rem;
+}
+
+footer a img {
+  text-decoration: none;
+  width: 30px;
+  margin: 0 0.5rem;
+}
+
+.social-icons a img {
+  text-decoration: none;
+  width: 30px;
+  margin-left: 0.5rem;
+}
+
+.map-iframe {
+  border: 0;
+  width: 600px;
+  height: 450px;
+}
+
+.team {
+  text-align: center;
+  padding: 20px;
+  overflow: hidden; /* Oculta cualquier contenido que se salga del contenedor */
+  width: 100%;
+}
+
+.team-wrapper {
+  width: 100%;
+  overflow: hidden; /* Muy importante para ocultar el desbordamiento */
+}
+
+.team-container {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+  white-space: nowrap;
+  max-width: none;
+  animation: scroll 20s linear infinite; /* Animación! */
+  width: calc(200px * 14 + 20px * 13); /* Ancho para 7 imagenes * 2 + los espacios.  ¡AJUSTAR SI CAMBIAS EL NUMERO DE IMAGENES O EL ESPACIO! */
+}
+
+.figure-wrapper {
+  flex: 0 0 200px; /* Ancho fijo */
+  text-align: center;
+}
+
+  .team-container figure {
+      height: 200px;
+      overflow: hidden;
+      margin: 0;
+  }
+
+  .team-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en navegadores WebKit */
+}
+
+.team-container {
+  -ms-overflow-style: none;  /* Oculta la barra de desplazamiento en IE y Edge */
+  scrollbar-width: none;  /* Oculta la barra de desplazamiento en Firefox */
+}
+
+.team-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  object-position: center;
+}
+
+.team-container img:hover {
+  transform: scale(1.1);
+}
+
+.team-container figcaption {
+  margin-top: 5px; /* Espacio entre la imagen y el texto */
+  font-size: 0.9rem; /* Ajusta el tamaño de la fuente si es necesario */
+  color: #555;
+}
+
+/* Animación de scroll infinito */
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%); /* Desplaza a la mitad del ancho total */
+  }
+}
